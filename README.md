@@ -25,7 +25,7 @@ cp .env.example .env
 ### 3. Start the Docker Containers
 
 ```sh
-docker-compose up -d
+./vendor/bin/sail up -d
 ```
 
 ### 4. Install Composer Dependencies
@@ -104,7 +104,3 @@ The project uses Redis for caching.
 ## License
 
 The Laravel Project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-```
-
-```
