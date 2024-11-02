@@ -5,7 +5,6 @@ This is a Laravel project that includes features such as user authentication, bo
 ## Prerequisites
 
 -   Docker
--   Docker Compose
 
 ## Setup Instructions
 
@@ -31,37 +30,37 @@ cp .env.example .env
 ### 4. Install Composer Dependencies
 
 ```sh
-docker-compose exec app composer install
+./vendor/bin/sail composer install
 ```
 
 ### 5. Install NPM Dependencies
 
 ```sh
-docker-compose exec app npm install
+./vendor/bin/sail npm install
 ```
 
 ### 6. Generate an App Encryption Key
 
 ```sh
-docker-compose exec app php artisan key:generate
+./vendor/bin/sail php artisan key:generate
 ```
 
 ### 7. Run the Database Migrations
 
 ```sh
-docker-compose exec app php artisan migrate
+./vendor/bin/sail php artisan migrate
 ```
 
 ### 8. Seed the Database (Optional)
 
 ```sh
-docker-compose exec app php artisan db:seed
+./vendor/bin/sail php artisan db:seed
 ```
 
 ### 9. Build the Frontend Assets
 
 ```sh
-docker-compose exec app npm run dev
+./vendor/bin/sail npm run dev
 ```
 
 ### 10. Access the Application
@@ -71,7 +70,7 @@ You can access the application at [http://localhost](http://localhost).
 ### 11. Run Tests
 
 ```sh
-docker-compose exec app php artisan test
+./vendor/bin/sail php artisan test
 ```
 
 ## API Endpoints
