@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Events\BookAdded;
 use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,6 +28,10 @@ class BookService
             $book = Book::create($data);
             Cache::forget('books'); // Clear the cache when a new book is created
             Log::info('Cache cleared for books');
+
+            // Trigger the BookAdded event
+            BookAdded::dispatch($book);
+
             return response()->json(['message' => 'Book created!', 'book' => $book], 201);
         } catch (\Exception $e) {
             Log::error('Error creating book', ['exception' => $e]);
