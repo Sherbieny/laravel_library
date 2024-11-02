@@ -5,7 +5,7 @@ use App\Http\Controllers\Api\BookController;
 use App\Http\Controllers\Api\AuthController;
 
 Route::post('/sanctum/token', [AuthController::class, 'createToken']);
-Route::post('/sanctum/logout', [AuthController::class, 'logout']);
+Route::middleware('auth:sanctum')->post('/sanctum/logout', [AuthController::class, 'logout']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/books', [BookController::class, 'index']);

@@ -1,6 +1,6 @@
-# Laravel Project
+# Laravel Book Library Project
 
-This is a Laravel project that includes features such as user authentication, book management, and API endpoints. The project uses Docker for containerization and includes Redis for caching, Meilisearch for search functionality, and Mailpit for email testing.
+This is a Laravel project that includes features such as user authentication, book management, and API endpoints. The project uses Docker for containerization and includes Redis for caching.
 
 ## Prerequisites
 
@@ -66,7 +66,7 @@ docker-compose exec app npm run dev
 
 ### 10. Access the Application
 
-You can access the application at [http://localhost:8080](http://localhost:8080).
+You can access the application at [http://localhost](http://localhost).
 
 ### 11. Run Tests
 
