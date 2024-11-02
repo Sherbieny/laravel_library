@@ -78,6 +78,16 @@ You can access the application at [http://localhost](http://localhost).
 ### Authentication
 
 -   `POST /sanctum/token` - Get a token for the user
+
+    -   Request Body:
+
+        ```json
+        {
+            "email": "test@example.com",
+            "password": "password"
+        }
+        ```
+
 -   `POST /sanctum/logout` - Logout and Revoke the user's token
 
 ### Books
