@@ -9,6 +9,9 @@ class CategorySeeder extends Seeder
 {
     public function run()
     {
+        // Clear existing records
+        Category::query()->delete();
+
         $categories = [
             ['name' => 'Fiction'],
             ['name' => 'Non-Fiction'],

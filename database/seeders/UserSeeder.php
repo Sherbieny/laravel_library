@@ -10,10 +10,24 @@ class UserSeeder extends Seeder
 {
     public function run()
     {
-        User::create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => Hash::make('password'), // Default password for testing
-        ]);
+        // Clear existing records
+        User::query()->delete();
+
+        $users = [
+            [
+                'name' => 'Test User',
+                'email' => 'test@example.com',
+                'password' => Hash::make('password'), // Default password for testing
+            ],
+            [
+                'name' => 'Test User 2',
+                'email' => 'test2@example.com',
+                'password' => Hash::make('password'), // Default password for testing
+            ],
+        ];
+
+        foreach ($users as $user) {
+            User::create($user);
+        }
     }
 }
