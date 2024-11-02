@@ -21,7 +21,7 @@ class BookController extends Controller
     {
         try {
             $books = $this->bookService->getBooks($request->category_id);
-            return response()->json(['books' => $books], 200);
+            return response()->json($books, 200);
         } catch (\Exception $e) {
             Log::error('Error fetching books', ['exception' => $e]);
             return response()->json(['message' => 'Error fetching books'], 500);
