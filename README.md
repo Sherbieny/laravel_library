@@ -57,17 +57,23 @@ cp .env.example .env
 ./vendor/bin/sail php artisan db:seed
 ```
 
-### 9. Build the Frontend Assets
+### 9. Link the Storage Folder
+
+```sh
+./vendor/bin/sail php artisan storage:link
+```
+
+### 10. Build the Frontend Assets
 
 ```sh
 ./vendor/bin/sail npm run dev
 ```
 
-### 10. Access the Application
+### 11. Access the Application
 
 You can access the application at [http://localhost](http://localhost).
 
-### 11. Run Tests
+### 12. Run Tests
 
 ```sh
 ./vendor/bin/sail php artisan test
